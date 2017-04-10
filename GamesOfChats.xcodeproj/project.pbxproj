@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		384E09DB1E91B7BA004CCB20 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E09DA1E91B7BA004CCB20 /* UserCell.swift */; };
 		384E09DD1E91C5BD004CCB20 /* LoginController+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E09DC1E91C5BD004CCB20 /* LoginController+Handler.swift */; };
+		389A48861E99722A0070B12D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A48851E99722A0070B12D /* Extensions.swift */; };
 		38AB74121E9141E700857BF6 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB74111E9141E700857BF6 /* NewMessageViewController.swift */; };
 		38AB74141E91967100857BF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB74131E91967100857BF6 /* User.swift */; };
 		38FCE6631E7EB70C00E7A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FCE6621E7EB70C00E7A319 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		384E09DA1E91B7BA004CCB20 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		384E09DC1E91C5BD004CCB20 /* LoginController+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+Handler.swift"; sourceTree = "<group>"; };
+		389A48851E99722A0070B12D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		38AB74111E9141E700857BF6 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		38AB74131E91967100857BF6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		38FCE6581E7EB70C00E7A319 /* GamesOfChats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesOfChats.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		389A48841E9971FB0070B12D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				389A48851E99722A0070B12D /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		38AB74151E919C3400857BF6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		38FCE65A1E7EB70C00E7A319 /* GamesOfChats */ = {
 			isa = PBXGroup;
 			children = (
+				389A48841E9971FB0070B12D /* Extensions */,
 				38AB74151E919C3400857BF6 /* Model */,
 				38FCE66D1E7EB77700E7A319 /* AppDelegate.swift */,
 				38FCE66E1E7EB77700E7A319 /* LoginViewController.swift */,
@@ -238,6 +249,7 @@
 				384E09DD1E91C5BD004CCB20 /* LoginController+Handler.swift in Sources */,
 				38FCE6721E7EB77700E7A319 /* ViewController.swift in Sources */,
 				38FCE6711E7EB77700E7A319 /* LoginViewController.swift in Sources */,
+				389A48861E99722A0070B12D /* Extensions.swift in Sources */,
 				384E09DB1E91B7BA004CCB20 /* UserCell.swift in Sources */,
 				38AB74121E9141E700857BF6 /* NewMessageViewController.swift in Sources */,
 				38AB74141E91967100857BF6 /* User.swift in Sources */,

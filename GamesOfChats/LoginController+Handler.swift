@@ -40,7 +40,7 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
             
             guard let email = emailTextField.text , let password = passwordTextField.text else{
                 
-                print("Form is not valid")
+                print("Form is not valid ")
                 return
             }
             
@@ -54,6 +54,8 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
                 return
             }
         
+            loginActivityIndicator.startAnimating()
+            
             FIRAuth.auth()?.createUser(withEmail: email, password: password, completion:{ (user: FIRUser?, error) in
                 
                 if (error != nil){
@@ -67,9 +69,10 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
                 }
                 
                 let imageName = UUID().uuid
+                
                 let storeRef = FIRStorage.storage().reference().child("\(imageName).jpg")
                 
-                if let uploadImage = UIImagePNGRepresentation(self.profileImageView.image!){
+                if let profileImage = self.profileImageView.image, let uploadImage = UIImageJPEGRepresentation(profileImage, 0.2){
                     
                     storeRef.put(uploadImage, metadata: nil, completion: {(metadata, error) in
                     
@@ -100,8 +103,6 @@ extension LoginViewController: UIImagePickerControllerDelegate, UINavigationCont
                     print("Erro")
                     return
                 }
-                
-                self.dismiss(animated: true, completion: nil)
             })
     }
 }

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     var emailTextFielHeightAnchor: NSLayoutConstraint?
     var passwordTextFieldHeightAnchor: NSLayoutConstraint?
     var separatorName:NSLayoutConstraint?
+    var messageViewController:ViewController?
     
     let loginActivityIndicator: UIActivityIndicatorView = {
     
@@ -159,6 +160,11 @@ class LoginViewController: UIViewController {
             
             if FIRAuth.auth()?.currentUser?.uid != nil {
                 
+                if(self.loginRegisterSegmentedControl.selectedSegmentIndex == 1){
+                
+                    self.messageViewController?.navigationItem.title = self.nameTextField.text
+                }
+                
                 self.dismiss(animated: true, completion: nil)
                 
             }
@@ -183,6 +189,8 @@ class LoginViewController: UIViewController {
                 print ("Erro")
                 return
             }
+            
+            self.messageViewController?.checkUserData()
         }
     }
     
@@ -243,7 +251,7 @@ class LoginViewController: UIViewController {
     func setUpProfileImageView(){
         
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -10).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -5).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }

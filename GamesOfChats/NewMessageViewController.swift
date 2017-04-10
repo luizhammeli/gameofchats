@@ -30,9 +30,7 @@ class NewMessageViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! UserCell
         
         if let name = users[indexPath.row].name{
             
@@ -42,6 +40,11 @@ class NewMessageViewController: UITableViewController {
         if let email = users[indexPath.row].email{
             
             cell.detailTextLabel?.text = email
+        }
+        
+        if let imageUrl = users[indexPath.row].image{
+        
+            cell.profileImage.loadImageWithUrlString(imageUrl)
         }
         
         return cell
@@ -66,5 +69,10 @@ class NewMessageViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         })
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+        return 58
     }
 }
