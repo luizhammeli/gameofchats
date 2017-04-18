@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381300AE1EA59FFE0048C5AE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381300AD1EA59FFE0048C5AE /* Message.swift */; };
 		384E09DB1E91B7BA004CCB20 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E09DA1E91B7BA004CCB20 /* UserCell.swift */; };
 		384E09DD1E91C5BD004CCB20 /* LoginController+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E09DC1E91C5BD004CCB20 /* LoginController+Handler.swift */; };
 		389A48861E99722A0070B12D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A48851E99722A0070B12D /* Extensions.swift */; };
+		38AAD2EB1E9EFE6500D48849 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD2EA1E9EFE6500D48849 /* ChatLogViewController.swift */; };
 		38AB74121E9141E700857BF6 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB74111E9141E700857BF6 /* NewMessageViewController.swift */; };
 		38AB74141E91967100857BF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AB74131E91967100857BF6 /* User.swift */; };
 		38FCE6631E7EB70C00E7A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38FCE6621E7EB70C00E7A319 /* Assets.xcassets */; };
@@ -22,9 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381300AD1EA59FFE0048C5AE /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		384E09DA1E91B7BA004CCB20 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		384E09DC1E91C5BD004CCB20 /* LoginController+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+Handler.swift"; sourceTree = "<group>"; };
 		389A48851E99722A0070B12D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		38AAD2EA1E9EFE6500D48849 /* ChatLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		38AB74111E9141E700857BF6 /* NewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		38AB74131E91967100857BF6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		38FCE6581E7EB70C00E7A319 /* GamesOfChats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesOfChats.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				38AB74131E91967100857BF6 /* User.swift */,
+				381300AD1EA59FFE0048C5AE /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 				38FCE66E1E7EB77700E7A319 /* LoginViewController.swift */,
 				384E09DC1E91C5BD004CCB20 /* LoginController+Handler.swift */,
 				38FCE66F1E7EB77700E7A319 /* ViewController.swift */,
+				38AAD2EA1E9EFE6500D48849 /* ChatLogViewController.swift */,
 				38AB74111E9141E700857BF6 /* NewMessageViewController.swift */,
 				384E09DA1E91B7BA004CCB20 /* UserCell.swift */,
 				38FCE6621E7EB70C00E7A319 /* Assets.xcassets */,
@@ -253,6 +259,8 @@
 				384E09DB1E91B7BA004CCB20 /* UserCell.swift in Sources */,
 				38AB74121E9141E700857BF6 /* NewMessageViewController.swift in Sources */,
 				38AB74141E91967100857BF6 /* User.swift in Sources */,
+				381300AE1EA59FFE0048C5AE /* Message.swift in Sources */,
+				38AAD2EB1E9EFE6500D48849 /* ChatLogViewController.swift in Sources */,
 				38FCE6701E7EB77700E7A319 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

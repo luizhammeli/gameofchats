@@ -12,6 +12,7 @@ import Firebase
 class NewMessageViewController: UITableViewController {
 
     var users = [User]()
+    var messageController: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,7 @@ class NewMessageViewController: UITableViewController {
             let dic = snapshot.value as! [String:AnyObject]
             let user = User()
             user.setValuesForKeys(dic)
+            user.id = snapshot.key
             self.users.append(user)
             
             DispatchQueue.main.async {
@@ -74,5 +76,13 @@ class NewMessageViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     
         return 58
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.dismiss(animated: true, completion: {
+        
+            self.messageController?.showChatController(self.users[indexPath.row])
+        })
     }
 }

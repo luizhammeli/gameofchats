@@ -11,6 +11,7 @@ import Firebase
 
 class ViewController: UITableViewController {
 
+    var messages = [Message]()
     override func viewDidLoad() {
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,13 +33,47 @@ class ViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.plain, target: self, action: #selector(logOut))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "new_message_icon"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(handleNewMessage))
+        
+        self.observeMessage()
+    }
+    
+    func observeMessage(){
+    
+        let ref = FIRDatabase.database().reference().child("message")
+        ref.observe(.childAdded, with: {(snapshot) in
+         
+            if let dic = snapshot.value as? [String: AnyObject]{
+                let message = Message()
+                message.setValuesForKeys(dic)
+                self.messages.append(message)
+                
+                DispatchQueue.main.async {
+                    
+                    self.tableView.reloadData()
+                }
+            }
+        })
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return messages.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        cell.textLabel?.text = messages[indexPath.row].toId
+        cell.detailTextLabel?.text = messages[indexPath.row].text
+        
+        return cell
     }
     
     func handleNewMessage(){
     
-        let messageViewController = NewMessageViewController()
-        
-        let navController = UINavigationController(rootViewController: messageViewController)
+        let newMessageViewController = NewMessageViewController()
+        newMessageViewController.messageController = self
+        let navController = UINavigationController(rootViewController: newMessageViewController)
         
         self.present(navController, animated: true, completion: nil)
     }
@@ -64,6 +99,7 @@ class ViewController: UITableViewController {
     
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        //titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
         //titleView.backgroundColor = UIColor.red
         
         let containerView = UIView()
@@ -111,6 +147,14 @@ class ViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showChatController(_ user: User){
+    
+        let chatCollection = ChatLogViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatCollection.user = user
+        
+        self.navigationController?.pushViewController(chatCollection, animated: true)
     }
 }
 
